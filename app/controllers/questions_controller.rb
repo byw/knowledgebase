@@ -23,7 +23,7 @@ class QuestionsController < ApplicationController
   end
 
   def dashboard
-    @recent_questions = Question.all
+    @recent_questions = Question.recent
     @unanswered_questions = Question.unanswered
   end
 

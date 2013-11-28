@@ -13,8 +13,8 @@ class Question
   belongs_to :user
   embeds_many :answers
 
-  scope :recent, order_by(:created_by => :desc)
-  scope :unanswered, any_of({:answers.with_size => 0}, {:answers => nil}).order_by(:created_by => :asc)
+  scope :recent, order_by(:created_at => :desc)
+  scope :unanswered, any_of({:answers.with_size => 0}, {:answers => nil}).order_by(:created_at => :asc)
 
   attr_accessible :title, :text, :tags_string
 
