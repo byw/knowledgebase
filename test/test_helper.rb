@@ -7,8 +7,17 @@ require 'minitest/reporters'
 
 MiniTest::Reporters.use!
 
+DatabaseCleaner.clean_with :truncation
 DatabaseCleaner.strategy = :truncation
 
 class ActiveSupport::TestCase
   # Add more helper methods to be used by all tests here...
+end
+
+class MiniTest::Spec
+
+  after(:each) do
+    DatabaseCleaner.clean
+  end
+
 end

@@ -1,5 +1,26 @@
 MongoPlatform::Application.routes.draw do
-  get "books/index"
+
+  devise_for :users,
+             :path => "auth",
+             :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret',
+                              :confirmation => 'verification', :unlock => 'unblock',
+                              :registration => 'register', :sign_up => 'cmon_let_me_in' }
+
+
+  resources :answers
+
+
+  resource :user
+
+
+  resources :questions do
+    collection do
+      get 'search'
+    end
+    resources :answers
+  end
+
+  get "dashboard" => 'questions#dashboard'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -50,7 +71,7 @@ MongoPlatform::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'books#index'
+  root :to => 'questions#dashboard'
 
   # See how all your routes lay out with "rake routes"
 

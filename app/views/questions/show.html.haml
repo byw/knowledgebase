@@ -1,0 +1,23 @@
+.question
+  %h3.title=@question.title
+  .user=link_to @question.user.name, user_path(@question.user)
+  .text=@question.text
+  .tags
+    %h5 Tags
+    =@question.tags.join(', ') if @question.tags
+
+%h5 Answers
+.answers
+  COUNT:
+  =@question.answers.size
+  -@question.answers.each do |answer|
+    .answer
+      .id
+        ANSWER ID:
+        =answer.id
+      .text=answer.text
+      .user=link_to answer.answer_user.name, user_path(answer.answer_user)
+
+=form_for [@question, @new_answer] do |f|
+  =f.text_area :text
+  =f.submit 'Add Answer'
