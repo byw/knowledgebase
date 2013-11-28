@@ -8,9 +8,18 @@ body {
 }
 
 a:link {
-  color: #333377;
+  color: #333388;
+  &:hover {
+    color: CornflowerBlue;
+  }
 }
 
+a:visited {
+  color: Brown;
+  &:hover {
+    color: Crimson;
+  }
+}
 
 
 h1, h3 {
@@ -20,6 +29,9 @@ h1, h3 {
 @top-margin: 30px;
 @sidebar-width: 230px;
 
+input#user_remember_me {
+  display: inline
+}
 .notice {
   text-align: center;
   padding: 11px;
@@ -36,6 +48,9 @@ h1, h3 {
   position: fixed;
   padding: 30px 30px 0 30px;
   border-right: dotted 1px #ccc;
+  h1 {
+    margin-bottom: 50px;
+  }
   #account {
     margin-top: 30px;
   }
@@ -43,9 +58,10 @@ h1, h3 {
     width: 95%;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
   }
   a.ask {
-    font-size: 2em;
+    font-size: 1.5em;
     margin: 30px 0 30px 0;
     line-height: 3em;
   }
@@ -63,6 +79,13 @@ form {
   input, textarea {
     display: block;
     margin-bottom: 16px;
+    padding: 5px;
+    @border-width: 3px;
+    border-top: solid @border-width #ccc;
+    border-left: solid @border-width #ccc;
+    border-bottom: solid @border-width #fefefe;
+    border-right: solid @border-width #fefefe;
+    background-color: #fff;
   }
   input[type="text"], textarea {
     width: 350px;
@@ -71,9 +94,19 @@ form {
 
 input[type="submit"] {
   margin: 0px;
-  background-color: #ccc;
+  background-color: #eee;
+  @border-width: 1px;
+  border-top: solid @border-width #fff;
+  border-left: solid @border-width #fff;
+  border-bottom: solid @border-width #ccc;
+  border-right: solid @border-width #ccc;
   font-weight: bold;
   padding: 16px;
+  color: #777;
+  &:hover {
+    color: #aaa;
+    cursor: pointer;
+  }
 }
 
 .search-form {
@@ -107,8 +140,13 @@ input[type="submit"] {
 .question.details {
   width: 550px;
   .info {
+    font-size: 0.8em;
     margin-bottom: 21px;
     color: #bbb;
+    .user {
+      color: @font-color;
+      font-weight: bold;
+    }
   }
   .tags {
     margin: 28px 0 31px 0;

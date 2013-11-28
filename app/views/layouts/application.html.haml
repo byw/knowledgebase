@@ -13,7 +13,7 @@
       %h1= link_to 'pof', '/'
       =form_tag search_questions_path, class: 'search-form', method: :get do
         .form-group
-          = text_field_tag :search_term, '', class: 'form-control'
+          = text_field_tag :search_term, '', class: 'form-control', placeholder: 'What do you wanna search for?'
           = submit_tag 'search'
       = link_to 'Ask a Question', new_question_path, class: 'ask'
       #account

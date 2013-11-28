@@ -1,5 +1,5 @@
 .results
-  %h3 Search Results
+  %h3 Search Results for "#{params[:search_term]}"
   -@questions.each do |question|
     .question
       .title= link_to question.title, question_path(question)
