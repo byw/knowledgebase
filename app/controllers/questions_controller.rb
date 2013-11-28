@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, except: [:show, :dashboard]
 
   def index
     render text: 'asd'
