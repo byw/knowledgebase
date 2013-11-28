@@ -1,20 +1,79 @@
-@import 'custom_bootstrap/custom_bootstrap.less';
-
+@font-color: #333332;
 body {
-  padding: 15px;
+  font-family: Georgia, serif;
+  color: @font-color;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5em;
 }
 
-.home {
-  margin-bottom: 15px;
+a:link {
+  color: #333377;
+}
 
-  h1 {
-    display: inline;
+
+
+h1, h3 {
+  margin-top: 0px;
+}
+
+@top-margin: 30px;
+@sidebar-width: 230px;
+
+.notice {
+  text-align: center;
+  padding: 11px;
+  background-color: LightCyan;
+  color: DarkCyan;
+  border: dotted 1px DarkCyan;
+}
+
+#nav {
+  text-align: center;
+  width: @sidebar-width;
+  float: left;
+  height: 100%;
+  position: fixed;
+  padding: 30px 30px 0 30px;
+  border-right: dotted 1px #ccc;
+  #account {
+    margin-top: 30px;
+  }
+  input {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  a.ask {
+    font-size: 2em;
+    margin: 30px 0 30px 0;
+    line-height: 3em;
+  }
+}
+
+#content {
+  float: left;
+  margin-top: 30px;
+  margin-left: (@sidebar-width + 100);
+  width: 850px;
+}
+
+form {
+  margin-bottom: 31px;
+  input, textarea {
+    display: block;
+    margin-bottom: 16px;
+  }
+  input[type="text"], textarea {
+    width: 350px;
   }
 }
 
 input[type="submit"] {
-  .btn;
-  .btn-primary;
+  margin: 0px;
+  background-color: #ccc;
+  font-weight: bold;
+  padding: 16px;
 }
 
 .search-form {
@@ -23,5 +82,59 @@ input[type="submit"] {
   }
 }
 
+
+.questions#recent {
+}
+
 .questions {
+  margin: 0 20px 30px 0;
+  width: 350px;
+  float: left;
+  padding-left: 20px;
+  padding-right: 10px;
+  .question {
+    margin-bottom: 5px;
+    color: #ccc;
+    .title {
+      color: @font-color;
+    }
+  }
+  .question.mine {
+    color: red;
+  }
+}
+
+.question.details {
+  width: 550px;
+  .info {
+    margin-bottom: 21px;
+    color: #bbb;
+  }
+  .tags {
+    margin: 28px 0 31px 0;
+    .tag {
+      padding: 5px;
+      background-color: #ddd;
+    }
+  }
+  h3 {
+  }
+  .no-answer {
+    padding: 0px 0 30px 11px;
+    color: #aaa;
+    font-style: italic;
+  }
+  .answers {
+    padding: 0px 0 30px 21px;
+    .answer {
+      .info {
+        margin-top: 5px;
+      }
+    }
+
+  }
+  form#new_answer {
+    border-top: dotted 5px #ddd;
+    padding-top: 50px;
+  }
 }

@@ -9,20 +9,20 @@
     -if flash[:notice]
       .notice.alert.alert-info= flash[:notice]
 
-    .home
-      %h1= link_to 'patientoverflow', '/'
-      #account.pull-right
+    #nav
+      %h1= link_to 'pof', '/'
+      =form_tag search_questions_path, class: 'search-form', method: :get do
+        .form-group
+          = text_field_tag :search_term, '', class: 'form-control'
+          = submit_tag 'search'
+      = link_to 'Ask a Question', new_question_path, class: 'ask'
+      #account
         -if current_user
           =link_to "#{current_user.name}'s profile", edit_user_path
           |
           =link_to 'logout', destroy_user_session_path, method: :delete
         -else
           =link_to 'login', new_user_session_path
-    =form_tag search_questions_path, class: 'form search-form', method: :get do
-      .form-group
-        = text_field_tag :search_term, '', placeholder: 'search', class: 'form-control'
-        = submit_tag 'search'
-    = link_to 'Ask a Question', new_question_path
 
-    .content
+    #content
       = yield

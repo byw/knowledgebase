@@ -1,5 +1,5 @@
 =form_for @question do |f|
   =f.text_field :title, placeholder: 'question'
   =f.text_area :text, placeholder: 'details'
-  =f.text_field :tags_string, placeholder: 'tags'
-  =f.submit
+  =f.text_field :tags_string, placeholder: 'tags (separated by space)'
+  =f.submit 'Ask Away!'

@@ -1,21 +1,13 @@
-.col-lg-5.col-md-5.col-sm-5
-  .panel.panel-default
-    .panel-heading
-      %h3 Recent
-    .panel-body
-      %ul#recent.questions
-        -@recent_questions.each do |question|
-          %li.question
-            .title
-              =link_to question.title, question_path(question)
+%ul#recent.questions
+  %h3 Recent
+  -@recent_questions.each do |question|
+    %li.question
+      .title
+        =link_to question.title, question_path(question)
 
-.col-lg-5.col-md-5.col-sm-5
-  .panel.panel-default
-    .panel-heading
-      %h3 Unanswered
-    .panel-body
-      %ul#unanswered.questions
-        -@unanswered_questions.each do |question|
-          %li.question
-            .title
-              =link_to question.title, question_path(question)
+%ul#unanswered.questions
+  %h3 Unanswered
+  -@unanswered_questions.each do |question|
+    %li.question{:class => (question.user == current_user) ? 'mine' : ''}
+      .title
+        =link_to question.title, question_path(question)

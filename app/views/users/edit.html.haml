@@ -1,12 +1,13 @@
+%h3 My Profile
 =form_for @user do |f|
   =f.error_messages
   =f.text_field :name, placeholder: 'name'
   =f.text_field :email, placeholder: 'email'
-  =f.submit 'Update User'
+  =f.submit 'Update My Info'
 
 =form_for @user do |f|
   =f.error_messages
-  =f.password_field :password
-  =f.password_field :password_confirmation
+  =f.password_field :password, placeholder: 'new password'
+  =f.password_field :password_confirmation, placeholder: 'confirm new password'
 
-  =f.submit 'Change Password'
+  =f.submit 'Change My Password'

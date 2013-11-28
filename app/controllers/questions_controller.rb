@@ -19,8 +19,7 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
-    @new_answer = @question.answers.build
-    @new_answer.answer_user = current_user
+    @new_answer = Answer.new
   end
 
   def dashboard

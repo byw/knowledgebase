@@ -9,8 +9,6 @@ gem 'haml'
 gem 'therubyracer', :platforms => :ruby
 gem "less-rails"
 gem 'dynamic_form'
-gem 'less-rails-bootstrap'
-
 
 # Gems used only for assets and not required
 # in production environments by default.
