@@ -48,8 +48,25 @@ input#user_remember_me {
   position: fixed;
   padding: 30px 30px 0 30px;
   border-right: dotted 1px #ccc;
-  h1 {
+  h1.branding {
+    @radius: 50px;
     margin-bottom: 50px;
+    height: (@radius * 2);
+    width: (@radius * 2);
+    border-radius: @radius * 2;
+    background-color: PowderBlue ;
+    line-height: (@radius * 2) - 8;
+    margin-left: auto;
+    margin-right: auto;
+    a {
+      text-shadow: 2px 2px #aaa;
+    }
+    a:visited {
+      color: #fff;
+    }
+    &:hover {
+      opacity: 0.8;
+    }
   }
   #account {
     margin-top: 30px;
@@ -175,4 +192,8 @@ input[type="submit"] {
     border-top: dotted 5px #ddd;
     padding-top: 50px;
   }
+}
+
+.results.questions {
+  width: 580px;
 }

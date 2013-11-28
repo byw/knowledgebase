@@ -1,5 +1,5 @@
-.results
+%ul.results.questions
   %h3 Search Results for "#{params[:search_term]}"
   -@questions.each do |question|
-    .question
+    %li.question{:class => (question.user == current_user) ? 'mine' : ''}
       .title= link_to question.title, question_path(question)
